@@ -1,6 +1,4 @@
 from selenium import webdriver
-import difflib
-import unittest
 
 browser = webdriver.Chrome()
 
@@ -56,14 +54,14 @@ def writeFile():
 
 
 if __name__ == "__main__":
-    browser.get('https://www.lawmatch.net/basicLaw/frontend/public/exercise.html?type=SEQUENCE')
-    for i in range(330):
+    browser.get('https://www.lawmatch.net/constitution/frontend/public/exercise.html?type=SEQUENCE')
+    for i in range(184):
         choice_ans()
     browser.find_element_by_id("trueAnswer").click()
     browser.find_element_by_id("end").click()
     browser.find_element_by_id("errorAnalysis").click()
     # 已進入錯題界面
-    for i in range(330):
+    for i in range(184):
         record()
     ansSheet[browser.find_element_by_id("intitle").text] = browser.find_element_by_class_name("right").text
     writeFile()
